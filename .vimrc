@@ -15,6 +15,24 @@
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
 
+"------------------------------------------------------------
+" Vundle
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My bundles here:
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'altercation/vim-colors-solarized'
+
+"------------------------------------------------------------
+
+
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
@@ -123,7 +141,10 @@ set number
 set notimeout ttimeout ttimeoutlen=200
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
+" set pastetoggle=<F11>
+
+" Fix bad autoindent of pasted text
+set paste
 
 
 "------------------------------------------------------------
@@ -158,3 +179,17 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 
 "------------------------------------------------------------
+
+syntax enable
+set background=light
+colorscheme solarized
+set t_Co=16
+
+" Check spelling in specific file types
+au BufRead *.txt setlocal spell
+
+" Map copy to <C-c>
+vnoremap <C-c> "+y
+
+" Ctags
+set tags=./tags;/
