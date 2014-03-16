@@ -17,18 +17,18 @@ set nocompatible
 
 "------------------------------------------------------------
 " Vundle
-filetype off                  " required!
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-
-" My bundles here:
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'altercation/vim-colors-solarized'
+"filetype off                  " required!
+"
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
+"
+"" let Vundle manage Vundle
+"" required! 
+"Bundle 'gmarik/vundle'
+"
+"" My bundles here:
+"Bundle 'vim-ruby/vim-ruby'
+"Bundle 'altercation/vim-colors-solarized'
 
 "------------------------------------------------------------
 
@@ -181,9 +181,9 @@ nnoremap <C-L> :nohl<CR><C-L>
 "------------------------------------------------------------
 
 syntax enable
-set background=light
-colorscheme solarized
-set t_Co=16
+"set background=light
+"colorscheme solarized
+"set t_Co=16
 
 " Check spelling in specific file types
 au BufRead *.txt setlocal spell
