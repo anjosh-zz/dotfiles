@@ -180,16 +180,21 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 "------------------------------------------------------------
 
-syntax enable
-"set background=light
-"colorscheme solarized
-"set t_Co=16
+" Solarized for Cygwin
+set background=dark
+colorscheme solarized
+"let g:solarized_termcolors=256
+"let g:solarized_termtrans=1
+set t_Co=16
 
 " Check spelling in specific file types
 au BufRead *.txt setlocal spell
 
 " Map copy to <C-c>
 vnoremap <C-c> "+y
+
+" Map jk to exit insert mode
+inoremap jk <Esc>
 
 " Ctags
 set tags=./tags;/
