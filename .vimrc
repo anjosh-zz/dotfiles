@@ -18,16 +18,15 @@ set nocompatible
 "------------------------------------------------------------
 " Vundle
 "filetype off                  " required!
-"
+
 "set rtp+=~/.vim/bundle/vundle/
 "call vundle#rc()
-"
-"" let Vundle manage Vundle
-"" required! 
+
+" let Vundle manage Vundle
+" required! 
 "Bundle 'gmarik/vundle'
-"
-"" My bundles here:
-"Bundle 'vim-ruby/vim-ruby'
+
+" My bundles here:
 "Bundle 'altercation/vim-colors-solarized'
 
 "------------------------------------------------------------
@@ -140,11 +139,11 @@ set number
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
-" Use <F11> to toggle between 'paste' and 'nopaste'
-" set pastetoggle=<F11>
+" Use <F9> to toggle between 'paste' and 'nopaste'
+set pastetoggle=<F9>
 
 " Fix bad autoindent of pasted text
-set paste
+"set paste
 
 
 "------------------------------------------------------------
@@ -181,17 +180,18 @@ nnoremap <C-L> :nohl<CR><C-L>
 "------------------------------------------------------------
 
 " Solarized for Cygwin
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
 "let g:solarized_termcolors=256
 "let g:solarized_termtrans=1
-set t_Co=16
+"set t_Co=16
 
 " Check spelling in specific file types
 au BufRead *.txt setlocal spell
 
 " Map copy to <C-c>
-vnoremap <C-c> "+y
+"vnoremap <C-c> "+y
+vnoremap <C-c> "*y
 
 " Map jk to exit insert mode
 inoremap jk <Esc>
