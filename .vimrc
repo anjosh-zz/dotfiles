@@ -17,18 +17,22 @@ set nocompatible
 
 "------------------------------------------------------------
 " Vundle
-"filetype off                  " required!
+filetype off                  " required!
 
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" let Vundle manage Vundle
-" required! 
-"Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required!
+Plugin 'gmarik/Vundle.vim'
 
-" My bundles here:
-"Bundle 'altercation/vim-colors-solarized'
 
+" Keep Plugin commands between vundle#begin/end.
+"Plugin 'altercation/vim-colors-solarized'
+Plugin 'Slava/vim-spacebars'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 "------------------------------------------------------------
 
 
