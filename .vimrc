@@ -180,11 +180,11 @@ nnoremap <C-L> :nohl<CR><C-L>
 "------------------------------------------------------------
 
 " Solarized for Cygwin
-"set background=dark
-"colorscheme solarized
+set background=dark
+colorscheme solarized
 "let g:solarized_termcolors=256
 "let g:solarized_termtrans=1
-"set t_Co=16
+set t_Co=16
 
 " Check spelling in specific file types
 au BufRead *.txt setlocal spell
