@@ -26,9 +26,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required!
 Plugin 'gmarik/Vundle.vim'
 
-
 " Keep Plugin commands between vundle#begin/end.
-"Plugin 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'tomasr/molokai'
+"Plugin 'lsdr/monokai'
 Plugin 'Slava/vim-spacebars'
 
 " All of your Plugins must be added before the following line
@@ -180,22 +181,29 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
-
 "------------------------------------------------------------
 
-" Solarized for Cygwin
-set background=dark
+" Molokai
+"colorscheme molokai
+"colorscheme monokai
+
+" Solarized
 colorscheme solarized
+set background=dark
+set t_Co=16
+
+" Cygwin
 "let g:solarized_termcolors=256
 "let g:solarized_termtrans=1
-set t_Co=16
 
 " Check spelling in specific file types
 au BufRead *.txt setlocal spell
 
 " Map copy to <C-c>
-"vnoremap <C-c> "+y
-vnoremap <C-c> "*y
+vnoremap <C-c> "+y
+
+" Cygwin
+"vnoremap <C-c> "*y
 
 " Map jk to exit insert mode
 inoremap jk <Esc>
