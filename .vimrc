@@ -214,3 +214,6 @@ set tags=./tags;/
 
 " Relative numbers
 set relativenumber
+
+" Search for visually selected text
+vnorem // y/<c-r>"<cr>
