@@ -32,6 +32,9 @@ Plugin 'altercation/vim-colors-solarized'
 "Plugin 'lsdr/monokai'
 Plugin 'Slava/vim-spacebars'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'mattn/emmet-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -159,8 +162,8 @@ set pastetoggle=<F9>
 
 " Indentation settings for using 2 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 " Indentation settings for using hard tabs for indent. Display tabs as
@@ -217,3 +220,5 @@ set relativenumber
 
 " Search for visually selected text
 vnorem // y/<c-r>"<cr>
+
+set incsearch
