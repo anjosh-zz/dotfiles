@@ -28,13 +28,25 @@ Plugin 'gmarik/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'altercation/vim-colors-solarized'
-"Plugin 'tomasr/molokai'
-"Plugin 'lsdr/monokai'
 Plugin 'Slava/vim-spacebars'
 Plugin 'tpope/vim-fugitive'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'othree/tern_for_vim_coffee'
+Plugin 'Shougo/unite.vim'
+Plugin 'bling/vim-airline'
+Plugin 'benmills/vimux'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -162,14 +174,14 @@ set pastetoggle=<F9>
 
 " Indentation settings for using 2 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 " Indentation settings for using hard tabs for indent. Display tabs as
 " two characters wide.
-"set shiftwidth=2
-"set tabstop=2
+"set shiftwidth=4
+set tabstop=4
 
 
 "------------------------------------------------------------
@@ -222,3 +234,35 @@ set relativenumber
 vnorem // y/<c-r>"<cr>
 
 set incsearch
+
+" NERDTree
+noremap <C-n> :NERDTreeToggle<CR>
+
+noremap ; :
+noremap : ;
+
+" Leader key is comma
+" let mapleader = ","
+
+" Use Fly Mode for auto-pairs plugin
+let g:AutoPairsFlyMode = 1
+let g:AutoPairsShortcutBackInsert = '<C-b>'
+let g:AutoPairsShortcutFastWrap = '<C-e>'
+
+set noswapfile
+
+au BufRead,BufNewFile /home/josh/apps/startupfactory/* setl shiftwidth=2 tabstop=2 noexpandtab
+
+" Xetex
+autocmd BufRead,BufNewFile *.xtx set filetype=tex
+
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:tmuxline_powerline_separators = 0
+
+" indentLine
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '·'
