@@ -208,18 +208,11 @@ colorscheme solarized
 set background=dark
 set t_Co=16
 
-" Cygwin
-"let g:solarized_termcolors=256
-"let g:solarized_termtrans=1
-
 " Check spelling in specific file types
 au BufRead *.txt setlocal spell
 
 " Map copy to <C-c>
 vnoremap <C-c> "+y
-
-" Cygwin
-"vnoremap <C-c> "*y
 
 " Map jk to exit insert mode
 inoremap jk <Esc>
@@ -241,17 +234,12 @@ noremap <C-n> :NERDTreeToggle<CR>
 noremap ; :
 noremap : ;
 
-" Leader key is comma
-" let mapleader = ","
-
 " Use Fly Mode for auto-pairs plugin
 let g:AutoPairsFlyMode = 1
 let g:AutoPairsShortcutBackInsert = '<C-b>'
 let g:AutoPairsShortcutFastWrap = '<C-e>'
 
 set noswapfile
-
-au BufRead,BufNewFile /home/josh/apps/startupfactory/* setl shiftwidth=2 tabstop=2 noexpandtab
 
 " Xetex
 autocmd BufRead,BufNewFile *.xtx set filetype=tex

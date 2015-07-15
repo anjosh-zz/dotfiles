@@ -8,10 +8,6 @@ alias ls='ls -hF --color'                     # classify files in colour
 alias ll='ls -l'                              # long list
 alias la='ls -A'                              # all but . and ..
 
-alias download='/cygdrive/c/Documents\ and\ Settings/jangeluc/Downloads'
-
-source ~/mintty-colors-solarized/mintty-solarized-dark.sh
-
 # Return immediately if we are not interactive
 [ -z "$PS1" ] && return
 
