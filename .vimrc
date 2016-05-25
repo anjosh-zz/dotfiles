@@ -28,25 +28,25 @@ Plugin 'gmarik/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Slava/vim-spacebars'
+"Plugin 'Slava/vim-spacebars'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'mattn/emmet-vim'
+"Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'othree/tern_for_vim_coffee'
+"Plugin 'kchmck/vim-coffee-script'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'marijnh/tern_for_vim'
+"Plugin 'othree/tern_for_vim_coffee'
 Plugin 'Shougo/unite.vim'
 Plugin 'bling/vim-airline'
 Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'Yggdroot/indentLine'
+"Plugin 'ntpeters/vim-better-whitespace'
+"Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -250,7 +250,3 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:tmuxline_powerline_separators = 0
-
-" indentLine
-let g:indentLine_leadingSpaceEnabled = 1
-let g:indentLine_leadingSpaceChar = '·'
