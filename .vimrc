@@ -42,7 +42,8 @@ Plugin 'scrooloose/nerdcommenter'
 "Plugin 'marijnh/tern_for_vim'
 "Plugin 'othree/tern_for_vim_coffee'
 Plugin 'Shougo/unite.vim'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'edkolev/tmuxline.vim'
@@ -200,14 +201,10 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 "------------------------------------------------------------
 
-" Molokai
-"colorscheme molokai
-"colorscheme monokai
-
 " Solarized
+set t_Co=16
 colorscheme solarized
 set background=dark
-set t_Co=16
 
 " Check spelling in specific file types
 au BufRead *.txt setlocal spell
@@ -251,4 +248,3 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:tmuxline_powerline_separators = 0
-let g:solarized_termtrans = 1
