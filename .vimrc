@@ -28,6 +28,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'altercation/vim-colors-solarized'
+"Plugin 'jnurmine/Zenburn'
 "Plugin 'Slava/vim-spacebars'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jiangmiao/auto-pairs'
@@ -250,3 +251,4 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:tmuxline_powerline_separators = 0
+let g:solarized_termtrans = 1

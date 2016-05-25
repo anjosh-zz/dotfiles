@@ -51,12 +51,11 @@ eval `dircolors ~/.dir_colors`
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git z vagrant npm)
 
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export PATH="$HOME/.meteor/tools/latest/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -93,6 +92,7 @@ alias spotify="spotify $suffix"
 alias brightness_inc="xbacklight -inc 20"
 alias brightness_dec="xbacklight -dec 20"
 alias tmux="TERM=xterm-256color /usr/bin/tmux"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+alias vu="vagrant up"
+alias vs="vagrant ssh"
+alias vr="vagrant reload"
+alias vst="vagrant status"
