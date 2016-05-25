@@ -1,15 +1,18 @@
 ; list the packages you want
 (setq package-list '(evil
-                     projectile
-                     helm
-                     org
                      evil-leader
                      evil-org
+                     evil-surround
+                     evil-escape
+                     helm
+                     projectile
+                     helm-projectile
+                     org
                      js2-mode
                      tern
                      tern-auto-complete
                      neotree
-                     evil-surround
+                     zenburn-theme
                      ))
 
 ; list the repositories containing them
@@ -80,8 +83,6 @@
 
 (define-key evil-normal-state-map (kbd ";") 'evil-ex)
 (define-key evil-normal-state-map (kbd ":") 'evil-repeat-find-char)
-
-(evil-jumper-mode t)
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
