@@ -27,28 +27,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
-Plugin 'altercation/vim-colors-solarized'
-"Plugin 'jnurmine/Zenburn'
-"Plugin 'Slava/vim-spacebars'
-Plugin 'tpope/vim-fugitive'
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-"Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-"Plugin 'kchmck/vim-coffee-script'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'marijnh/tern_for_vim'
-"Plugin 'othree/tern_for_vim_coffee'
-Plugin 'Shougo/unite.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'benmills/vimux'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'edkolev/tmuxline.vim'
-"Plugin 'ntpeters/vim-better-whitespace'
-"Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -201,11 +182,6 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 "------------------------------------------------------------
 
-" Solarized
-set t_Co=16
-colorscheme solarized
-set background=dark
-
 " Check spelling in specific file types
 au BufRead *.txt setlocal spell
 
@@ -232,19 +208,7 @@ noremap <C-n> :NERDTreeToggle<CR>
 noremap ; :
 noremap : ;
 
-" Use Fly Mode for auto-pairs plugin
-let g:AutoPairsFlyMode = 1
-let g:AutoPairsShortcutBackInsert = '<C-b>'
-let g:AutoPairsShortcutFastWrap = '<C-e>'
-
 set noswapfile
 
 " Xetex
 autocmd BufRead,BufNewFile *.xtx set filetype=tex
-
-" vim-airline
-let g:airline#extensions#tabline#enabled = 1
-"let g:airline_powerline_fonts = 1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:tmuxline_powerline_separators = 0

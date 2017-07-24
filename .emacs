@@ -10,7 +10,6 @@
                      tern-auto-complete
                      neotree
                      evil-surround
-                     emacs-eclim
                      evil-escape
                      groovy-mode
                      git-link
@@ -164,23 +163,9 @@
 (require 'evil-surround)
 (global-evil-surround-mode 1)
 
-(require 'eclim)
-(global-eclim-mode)
-
-(require 'eclimd)
-
 ;; regular auto-complete initialization
 (require 'auto-complete-config)
 (ac-config-default)
-
-;; add the emacs-eclim source
-(require 'ac-emacs-eclim-source)
-(ac-emacs-eclim-config)
-
-;(require 'company)
-;(require 'company-emacs-eclim)
-;(company-emacs-eclim-setup)
-;(global-company-mode t)
 
 (eval-after-load "git-link"
   '(progn
@@ -206,10 +191,3 @@
 (setq auto-mode-alist (cons '("\\.g4\\'" . antlr-mode) auto-mode-alist))
 (add-hook 'speedbar-load-hook  ; would be too late in antlr-mode.el
           (lambda () (speedbar-add-supported-extension ".g4")))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
