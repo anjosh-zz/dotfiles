@@ -30,6 +30,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -212,3 +213,7 @@ set noswapfile
 
 " Xetex
 autocmd BufRead,BufNewFile *.xtx set filetype=tex
+
+" Solarized
+colorscheme solarized
+set background=light

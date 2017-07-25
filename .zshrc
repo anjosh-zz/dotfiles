@@ -11,7 +11,7 @@ ZSH_THEME="minimal"
 DEFAULT_USER=`whoami`
 
 # Colors for ls
-eval `dircolors ~/.dir_colors`
+#eval `dircolors ~/.dir_colors`
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -86,12 +86,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-suffix="&> /dev/null &!"
-alias chrome="google-chrome $suffix"
-alias spotify="spotify $suffix"
-alias brightness_inc="xbacklight -inc 20"
-alias brightness_dec="xbacklight -dec 20"
-alias tmux="TERM=xterm-256color tmux -2"
 alias vu="vagrant up"
 alias vs="vagrant ssh"
 alias vr="vagrant reload"
