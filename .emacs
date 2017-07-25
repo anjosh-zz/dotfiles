@@ -3,7 +3,7 @@
                      projectile
                      helm
                      org
-                     evil-leader
+                     magit
                      evil-org
                      js2-mode
                      tern
@@ -85,8 +85,6 @@
 (define-key evil-normal-state-map (kbd ";") 'evil-ex)
 (define-key evil-normal-state-map (kbd ":") 'evil-repeat-find-char)
 
-(evil-jumper-mode t)
-
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 
@@ -122,18 +120,6 @@
   '(progn
      (require 'tern-auto-complete)
      (tern-ac-setup)))
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(antlr-tool-command
-   "java -jar ~/Downloads/query-parser-with-dependencies.jar -p -q=")
- '(evil-shift-width 2)
- '(js2-basic-offset 2)
- '(js2-bounce-indent-p t)
- '(org-agenda-files (quote ("~/todo.org" "~/Dropbox/GTD/gtd.org"))))
 
 ; function to manually kill tern process
 (defun delete-tern-process ()
