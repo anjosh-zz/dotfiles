@@ -31,6 +31,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -189,8 +190,8 @@ au BufRead *.txt setlocal spell
 " Map copy to <C-c>
 vnoremap <C-c> "+y
 
-" Map jk to exit insert mode
-inoremap jk <Esc>
+" Map fd to exit insert mode
+inoremap fd <Esc>
 
 " Ctags
 set tags=./tags;/
