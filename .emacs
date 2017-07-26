@@ -5,12 +5,12 @@
                      org
                      magit
                      evil-org
+                     evil-surround
+                     evil-escape
                      js2-mode
                      tern
                      tern-auto-complete
                      neotree
-                     evil-surround
-                     evil-escape
                      groovy-mode
                      git-link
                      flycheck
@@ -92,6 +92,9 @@
 
 (require 'org)
 (require 'evil-org)
+(add-hook 'org-mode-hook 'evil-org-mode)
+(evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading))
+
 (setq org-log-done t)
 (setq org-agenda-files
       (append
