@@ -2,6 +2,7 @@
 (setq package-list '(evil
                      projectile
                      helm
+                     helm-ag
                      org
                      magit
                      evil-org
@@ -9,7 +10,8 @@
                      evil-escape
                      js2-mode
                      tern
-                     tern-auto-complete
+                     company
+                     company-tern
                      neotree
                      groovy-mode
                      git-link
@@ -119,11 +121,13 @@
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-hook 'js-mode-hook 'js2-minor-mode)
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
-(eval-after-load 'tern
-  '(progn
-     (require 'tern-auto-complete)
-     (tern-ac-setup)))
+
+(with-eval-after-load 'company
+  (add-to-list 'company-backends 'company-tern))
+
+(add-hook 'js2-mode-hook (lambda ()
+                           (tern-mode)
+                           (company-mode)))
 
 ; function to manually kill tern process
 (defun delete-tern-process ()
@@ -153,9 +157,6 @@
 (require 'evil-surround)
 (global-evil-surround-mode 1)
 
-;; regular auto-complete initialization
-(require 'auto-complete-config)
-(ac-config-default)
 
 (eval-after-load "git-link"
   '(progn
@@ -181,3 +182,9 @@
 (setq auto-mode-alist (cons '("\\.g4\\'" . antlr-mode) auto-mode-alist))
 (add-hook 'speedbar-load-hook  ; would be too late in antlr-mode.el
           (lambda () (speedbar-add-supported-extension ".g4")))
+
+(setq javascript-indent-level 2) ; javascript-mode
+(setq js-indent-level 2) ; js-mode
+(setq js2-basic-offset 2) ; js2-mode, in latest js2-mode, it's alias of js-indent-level
+
+(setq evil-shift-width 2)
