@@ -2,6 +2,7 @@
 (setq package-list '(evil
                      projectile
                      helm
+                     helm-projectile
                      helm-ag
                      org
                      magit
@@ -18,6 +19,11 @@
                      flycheck
                      ox-pandoc
                      solarized-theme
+                     zenburn-theme
+                     go-mode
+                     vue-mode
+                     elpy
+                     rjsx-mode
                      ))
 
 ; list the repositories containing them
@@ -77,12 +83,13 @@
 (setq helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match    t)
 
+(projectile-mode 1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
 (helm-projectile-on)
 (setq projectile-switch-project-action 'helm-projectile)
 
-(load-theme 'zenburn t)
 (global-linum-mode t)
 
 (define-key evil-normal-state-map (kbd ";") 'evil-ex)
@@ -96,9 +103,9 @@
 (require 'org)
 (require 'evil-org)
 (add-hook 'org-mode-hook 'evil-org-mode)
+(add-hook 'org-mode-hook (lambda () (linum-mode 0))) ; linum mode was slowing down large org files
 (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading))
 
-(setq org-log-done t)
 (setq org-agenda-files
       (append
        (file-expand-wildcards "~/*.org")
@@ -119,7 +126,7 @@
         (nil :regexp . "relocation")
         (nil :regexp . "Council")))
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 (add-hook 'js-mode-hook 'js2-minor-mode)
 
 (with-eval-after-load 'company
@@ -175,6 +182,9 @@
   (append flycheck-disabled-checkers
     '(javascript-jshint)))
 
+(setq js2-strict-missing-semi-warning nil)
+(setq js2-missing-semi-one-line-override t)
+
 (require 'evil-escape)
 (evil-escape-mode)
 
@@ -188,3 +198,21 @@
 (setq js2-basic-offset 2) ; js2-mode, in latest js2-mode, it's alias of js-indent-level
 
 (setq evil-shift-width 2)
+
+(elpy-enable) ; python editing
+
+(load-theme 'zenburn t)
+
+(add-to-list 'exec-path "/usr/local/bin/")
+(add-hook 'with-editor-mode-hook 'evil-insert-state)
+
+(defun buffer-too-big-p ()
+  (or (> (buffer-size) (* 5000 80))
+      (> (line-number-at-pos (point-max)) 5000)))
+(add-hook 'prog-mode-hook
+          (lambda ()
+            ;; turn off `linum-mode' when there are more than 5000 lines
+            (if (buffer-too-big-p) (linum-mode -1))))
+
+; fix tern not able to find node
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
