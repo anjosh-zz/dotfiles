@@ -22,6 +22,7 @@
                      zenburn-theme
                      go-mode
                      vue-mode
+                     vue-html-mode
                      elpy
                      rjsx-mode
                      ))

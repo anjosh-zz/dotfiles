@@ -217,4 +217,4 @@ autocmd BufRead,BufNewFile *.xtx set filetype=tex
 
 " Solarized
 colorscheme solarized
-set background=light
+set background=dark
